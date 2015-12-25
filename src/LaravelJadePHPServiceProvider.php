@@ -3,6 +3,7 @@
 namespace mhochm\LaravelJadePHP;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\Engines\CompilerEngine;
 
 class LaravelJadePHPServiceProvider extends ServiceProvider
 {
