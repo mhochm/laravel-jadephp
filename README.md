@@ -8,7 +8,7 @@ to install this package.
 
 add the 
 
-<code>\mhochm\LaravelJadePhp\LaravelJadePhpServiceProvider,</code>
+<code>\mhochm\LaravelJadePhp\LaravelJadePhpServiceProvider::class,</code>
 
 to the list of providers in your config/app.php
 

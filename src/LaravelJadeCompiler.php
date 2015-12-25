@@ -5,7 +5,7 @@ namespace mhochm\LaravelJadePhp;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\View\Compilers\Compiler;
 use Illuminate\View\Compilers\CompilerInterface;
-use Jade\Jade;
+use mhochm\JadePhp\Jade;
 
 class LaravelJadeCompiler extends Compiler implements CompilerInterface
 {
@@ -22,7 +22,8 @@ class LaravelJadeCompiler extends Compiler implements CompilerInterface
     public function __construct(Filesystem $files, $cachePath)
     {
         parent::__construct($files, $cachePath);
-        $this->jade = $jade = new Jade([
+
+        $this->jade = new Jade([
             'prettyprint' => true,
             'extension' => '.jade'
         ]);
@@ -36,6 +37,7 @@ class LaravelJadeCompiler extends Compiler implements CompilerInterface
     public function compile($path)
     {
         $contents = $this->compileString($path);
+
         if (!is_null($this->cachePath)) {
             $this->files->put($this->getCompiledPath($path), $contents);
         }
