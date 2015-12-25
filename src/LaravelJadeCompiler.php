@@ -1,13 +1,13 @@
 <?php
 
-namespace mhochm\LaravelJadePHP;
+namespace mhochm\LaravelJadePhp;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\View\Compilers\Compiler;
 use Illuminate\View\Compilers\CompilerInterface;
 use Jade\Jade;
 
-class JadeCompiler extends Compiler implements CompilerInterface
+class LaravelJadeCompiler extends Compiler implements CompilerInterface
 {
     /**
      * @var Jade

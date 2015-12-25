@@ -1,11 +1,11 @@
 <?php
 
-namespace mhochm\LaravelJadePHP;
+namespace mhochm\LaravelJadePhp;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Engines\CompilerEngine;
 
-class LaravelJadePHPServiceProvider extends ServiceProvider
+class LaravelJadePhpServiceProvider extends ServiceProvider
 {
 
     /**
@@ -17,7 +17,7 @@ class LaravelJadePHPServiceProvider extends ServiceProvider
     {
         $this->app->singleton('jade.compiler', function ($app) {
             $cache = $app['config']['view.compiled'];
-            return new JadeCompiler($app['files'], $cache);
+            return new LaravelJadeCompiler($app['files'], $cache);
         });
         $this->app['view.engine.resolver']->register('jade', function () {
             return new CompilerEngine($this->app['jade.compiler'], $this->app['files']);
